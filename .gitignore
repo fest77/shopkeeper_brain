@@ -1,0 +1,179 @@
+# ==================================================================
+# 一、敏感信息（最重要！防止 API Key / 密码泄露）
+# ==================================================================
+# 环境变量文件：含 OPENAI_API_KEY / DASHSCOPE_API_KEY / MINERU_API_TOKEN
+#                MONGO_URL / MINIO_ACCESS_KEY / MINIO_SECRET_KEY 等
+.env
+.env.*
+*.env
+!.env.example          # 例外：示例模板文件允许提交（不含真实密钥）
+
+# 各类密钥、证书、凭据
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets.*
+*secret*
+*credential*
+*password*
+*token*
+!*token*.py            # 例外：源码文件里正常出现的 token 命名（如 task_util.py）
+!*token*_util.py
+
+# 云服务 / 数据库配置
+.aws/
+.azure/
+.gcp/
+*.tfvars
+*.tfstate
+
+
+# ==================================================================
+# 二、虚拟环境（体积大，不入库）
+# ==================================================================
+/venv/
+/ENV/
+/env/
+.venv/
+venv/
+ENV/
+env/
+/knowledge/.venv/
+/.venv/
+
+
+# ==================================================================
+# 三、IDE / 编辑器配置（含本地路径、个人偏好）
+# ==================================================================
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.jbeval/
+.spyderproject
+.spyproject
+*.swp
+*.swo
+*~
+
+
+# ==================================================================
+# 四、Python 编译产物与缓存
+# ==================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+
+# ==================================================================
+# 五、运行时产物 / 临时文件（导入流程输出）
+# ==================================================================
+# 导入流程的中间产物与结果
+output/
+temp-files/
+temp_dir/
+*.md.bak
+*_new.md
+chunks.json
+chunks_item_name.json
+chunks_vector.json
+chunks_vector_ids.json
+
+# 日志
+*.log
+logs/
+log/
+
+# 上传/下载的临时文件
+uploads/
+tmp/
+temp/
+
+
+# ==================================================================
+# 六、模型 / 向量库 / 数据库本地数据（体积巨大）
+# ==================================================================
+# 本地模型缓存（项目实际用 D:\ai_models，这里防误建）
+models/
+modelscope_cache/
+huggingface_cache/
+.cache/
+
+# Milvus / MongoDB / MinIO 本地数据卷
+milvus/
+.milvus/
+/var/lib/milvus/
+/var/log/milvus/
+volumes/
+minio-data/
+mongo-data/
+
+
+# ==================================================================
+# 七、安装包 / 大体积文件
+# ==================================================================
+# Python 安装包（项目根目录那个 3.10.11 安装程序）
+python-*.exe
+python-*.msi
+*.exe
+*.msi
+*.dmg
+*.pkg
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.rar
+*.iso
+*.whl
+
+
+# ==================================================================
+# 八、操作系统文件
+# ==================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+
+# ==================================================================
+# 九、个人草稿 / 本地笔记（不想公开可保留此项）
+# ==================================================================
+# 个人练习草稿（非项目源码）
+草稿纸.py
+my_test/
