@@ -1,0 +1,53 @@
+
+config.py中增加配置
+
+    # ==================== MinerU ====================
+    mineru_api_token: str = field(
+        default_factory=lambda: os.getenv("MINERU_API_TOKEN", "")
+    )
+    mineru_base_url: str = field(
+        default_factory=lambda: os.getenv("MINERU_BASE_URL", "")
+    )
+
+
+====day03=========================================================
+
+今日任务：
+
+    1.md格式    解读生成md文件
+
+    2.解决md文件中图片路径问题以及描述
+
+        ![](images/1.jpg)
+        ![图片描述信息](http://192.168.6.160:9000/kbbuket/images/1.jpg)
+
+    3.图片描述，需要调用vlm  视觉语言模型   千问大模型
+====day03=========================================================
+
+01-AI_掌柜智库_MD图片处理节点_任务目标前置分析
+
+    http://192.168.6.160:9001/      客户端地址，连接服务器账号和密码：minioadmin/minioadmin
+
+    http://192.168.6.160:9000/桶/文件夹/文件
+
+        案例：http://192.168.6.160:9000/atguigu/mm.jpg
+
+            开放桶的访问策略 ：  private(403) -> public
+
+
+02-AI_掌柜智库_扫盲_MinIO对象存储_API测试
+03-AI_掌柜智库_扫盲_qwen3.6-plus视觉语言模型_API测试
+04-AI_掌柜智库_扫盲_正则表达式_查找md中图片
+05-AI_掌柜智库_扫盲_限流访问大模型_时间滑动窗口函数
+06-AI_掌柜智库_扫盲_@dataclass装饰器(ImageContex、ImageInfo)
+07-AI_掌柜智库_扫盲_双检锁_并发安全-单例实例
+
+
+08-AI_掌柜智库_MD图片处理节点_实现流程分析
+
+
+09-AI_掌柜智库_MD图片处理节点_代码框架搭建
+
+10-AI_掌柜智库_MD图片处理节点_MdFileHandler
+
+

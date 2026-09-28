@@ -1,0 +1,15 @@
+# PyTorch (CUDA 12.8)
+#--extra-index-url https://download.pytorch.org/whl/cu128
+#torch
+#torchvision
+
+# 核心依赖
+minio
+langchain-openai
+langgraph
+grandalf
+pymilvus[model]
+sentence-transformers
+pymongo
+mineru[all]
+openai-agents

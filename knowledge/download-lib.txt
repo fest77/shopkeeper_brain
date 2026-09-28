@@ -1,0 +1,722 @@
+==================================================================================
+
+pip install -r knowledge\requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+==================================================================================
+
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> py -3.12 -m venv .\knowledge\.venv
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> .\knowledge\.venv\Scripts\Activate.ps1
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> pip install -r  .\knowledge\requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting minio (from -r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/3e/9a/b697530a882588a84db616580f2ba5d1d515c815e11c30d219145afeec87/minio-7.2.20-py3-none-any.whl (93 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 93.8/93.8 kB 1.1 MB/s eta 0:00:00
+Collecting langchain-openai (from -r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a6/8e/7406c99afacafc8c2ce0fa4152f9f8b9598c93ceb291959821abd053b982/langchain_openai-1.2.2-py3-none-any.whl (99 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.6/99.6 kB 951.0 kB/s eta 0:00:00
+Collecting langgraph (from -r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/42/9b/b08d578bba73e25351152dfd3d6d21e81210a5fff1b6f26e56f33197c8f5/langgraph-1.2.2-py3-none-any.whl (236 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 236.4/236.4 kB 904.5 kB/s eta 0:00:00
+Collecting grandalf (from -r .\knowledge\requirements.txt (line 10))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/61/30/44c7eb0a952478dbb5f2f67df806686d6a7e4b19f6204e091c4f49dc7c69/grandalf-0.8-py3-none-any.whl (41 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.8/41.8 kB 2.0 MB/s eta 0:00:00
+Collecting pymilvus[model] (from -r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ac/c1/01647e61f3a82fd881382746b6dde3401d65b88cd4f75bd059901fb2392b/pymilvus-3.0.0-1-py3-none-any.whl (344 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 344.8/344.8 kB 932.0 kB/s eta 0:00:00
+Collecting sentence-transformers (from -r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bf/03/ee99a6b030e7a2e056547729f8a4709dd93e13d9c6f07590f74c395c4017/sentence_transformers-5.5.1-py3-none-any.whl (588 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 588.9/588.9 kB 1.3 MB/s eta 0:00:00
+Collecting pymongo (from -r .\knowledge\requirements.txt (line 13))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/11/35/5c9262a459f988b4eb2605f70815240b77a0d4131136c4326d18f1822b89/pymongo-4.17.0-cp312-cp312-win_amd64.whl (920 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 920.3/920.3 kB 677.7 kB/s eta 0:00:00
+Collecting mineru[all] (from -r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bf/90/d9bf5588a2bdfc6a2985521536ab14b9a2b2ae2798664e3654b4171efdcc/mineru-3.2.0-py3-none-any.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 920.9 kB/s eta 0:00:00
+Collecting openai-agents (from -r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a0/89/adf09ec269d4de1c7be37c747d8488aac51b58d5589a9c1dd55f3c1e8e05/openai_agents-0.17.4-py3-none-any.whl (842 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 843.0/843.0 kB 1.8 MB/s eta 0:00:00
+Collecting argon2-cffi (from minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4f/d3/a8b22fa575b297cd6e3e3b0155c7e25db170edf1c74783d6a31a2490b8d9/argon2_cffi-25.1.0-py3-none-any.whl (14 kB)
+Collecting certifi (from minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.1/134.1 kB 878.7 kB/s eta 0:00:00
+Collecting pycryptodome (from minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/54/2f/e97a1b8294db0daaa87012c24a7bb714147c7ade7656973fd6c736b484ff/pycryptodome-3.23.0-cp37-abi3-win_amd64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 302.2 kB/s eta 0:00:00
+Collecting typing-extensions (from minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 440.7 kB/s eta 0:00:00
+Collecting urllib3 (from minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl (131 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.1/131.1 kB 322.3 kB/s eta 0:00:00
+Collecting langchain-core<2.0.0,>=1.4.0 (from langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0f/1a/86c38c27b81913a1c6c12448cab55defb5a1097c7dc9a4cea83f55477a2d/langchain_core-1.4.0-py3-none-any.whl (548 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 548.1/548.1 kB 860.6 kB/s eta 0:00:00
+Collecting openai<3.0.0,>=2.26.0 (from langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0a/bf/ccff9be562e24207716d04ef9dc931c76aff0c89a7265da43e2104d7fe06/openai-2.38.0-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 970.7 kB/s eta 0:00:00
+Collecting tiktoken<1.0.0,>=0.7.0 (from langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/aa/90/28d7f154888610aa9237e541986beb62b479df29d193a5a0617dbb1514d0/tiktoken-0.13.0-cp312-cp312-win_amd64.whl (874 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 874.7/874.7 kB 1.2 MB/s eta 0:00:00
+Collecting langgraph-checkpoint<5.0.0,>=4.1.0 (from langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bd/b4/71425e3e38be92611300b9cc5e46a5bf98ab23f5ea8a75b73d02a2f1413c/langgraph_checkpoint-4.1.1-py3-none-any.whl (56 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.2/56.2 kB 1.5 MB/s eta 0:00:00
+Collecting langgraph-prebuilt<1.2.0,>=1.1.0 (from langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e9/43/3fe1a700b8490ed02679cdbbc8c915eb23a092faf496c9c1118abcd10be3/langgraph_prebuilt-1.1.0-py3-none-any.whl (41 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.0/41.0 kB 2.1 MB/s eta 0:00:00
+Collecting langgraph-sdk<0.4.0,>=0.3.0 (from langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/be/a5/0196d9c05749c25bc198e4909d68c998bc3120297e14944921baf2f4c384/langgraph_sdk-0.3.15-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 1.1 MB/s eta 0:00:00
+Collecting pydantic>=2.7.4 (from langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fd/7b/122376b1fd3c62c1ed9dc80c931ace4844b3c55407b6fb2d199377c9736f/pydantic-2.13.4-py3-none-any.whl (472 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 472.3/472.3 kB 1.3 MB/s eta 0:00:00
+Collecting xxhash>=3.5.0 (from langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b9/1b/104b41a8947f4e1d4a66ce1e628eea752f37d1890bfd7453559ca7a3d950/xxhash-3.7.0-cp312-cp312-win_amd64.whl (31 kB)
+Collecting pyparsing (from grandalf->-r .\knowledge\requirements.txt (line 10))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl (122 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.8/122.8 kB 900.3 kB/s eta 0:00:00
+Collecting setuptools>=78.1.1 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9d/76/f789f7a86709c6b087c5a2f52f911838cad707cc613162401badc665acfe/setuptools-82.0.1-py3-none-any.whl (1.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 777.5 kB/s eta 0:00:00
+Collecting grpcio!=1.68.0,!=1.68.1,!=1.69.0,!=1.70.0,!=1.70.1,!=1.71.0,!=1.72.1,!=1.73.0,>=1.66.2 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2f/2c/296f6138caca1f4b92a31ace4ae1b87dab692fc16a7a3417af3bb3c805bf/grpcio-1.80.0-cp312-cp312-win_amd64.whl (4.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 544.0 kB/s eta 0:00:00
+Collecting orjson>=3.10.15 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b9/d5/973a43fc9c55e20f2051e9830997649f669be0cb3ca52192087c0143f118/orjson-3.11.9-cp312-cp312-win_amd64.whl (127 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.1/127.1 kB 828.8 kB/s eta 0:00:00
+Collecting protobuf>=5.27.2 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a7/ab/547fbd9e16d879dd13c167478f8ae0a83a428008ca07a5e06acdc23ad473/protobuf-7.35.0-cp310-abi3-win_amd64.whl (439 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 440.0/440.0 kB 886.1 kB/s eta 0:00:00
+Collecting python-dotenv<2.0.0,>=1.0.1 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0b/d7/1959b9648791274998a9c3526f6d0ec8fd2233e4d4acce81bbae76b44b2a/python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Collecting pandas>=1.2.4 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b9/c5/fc1b368f303087d20e8c9bf3d6ceb186263cfac0ade735cd938538bea839/pandas-3.0.3-cp312-cp312-win_amd64.whl (9.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.8/9.8 MB 531.7 kB/s eta 0:00:00
+Collecting cachetools>=5.0.0 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8c/7b/1fc1c09cc0756cf25861a3be10565915953876da48bb228fb9a672b20a42/cachetools-7.1.4-py3-none-any.whl (16 kB)
+Collecting requests>=2.20.0 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 997.4 kB/s eta 0:00:00
+Collecting pymilvus.model>=0.3.0 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5b/ba/b34e3f8c57c453c02daf1a1eff9c4b62a2e89fc10a29bc83fb685155fe14/pymilvus_model-0.3.2-py3-none-any.whl (47 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.7/47.7 kB 1.2 MB/s eta 0:00:00
+Collecting transformers<6.0.0,>=4.41.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/02/ca/2eaa5359f2ccb8c2e1656bc26305ad0cf438aa392ce4b29ae67a315c186e/transformers-5.9.0-py3-none-any.whl (10.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 469.8 kB/s eta 0:00:00
+Collecting huggingface-hub>=0.23.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/da/86/e05d58ea272089151ba9f6fcc7b44a97aa2533d5a5bce46611220c23c6d6/huggingface_hub-1.16.4-py3-none-any.whl (668 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 668.2/668.2 kB 2.5 MB/s eta 0:00:00
+Collecting torch>=1.11.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b9/c2/64b06cbb7830fb3cd9be13e1158b31a3f36b68e6a209105ee3c9d9480be0/torch-2.12.0-cp312-cp312-win_amd64.whl (123.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.0/123.0 MB 443.7 kB/s eta 0:00:00
+Collecting numpy>=1.20.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ab/ca/feab00bd44aa5fe1ad2c18f08b4d3bb92e26484b0b1d1443897809ed528c/numpy-2.4.6-cp312-cp312-win_amd64.whl (12.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 495.6 kB/s eta 0:00:00
+Collecting scikit-learn>=0.22.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9f/c4/0ab22726a04ede56f689476b760f98f8f46607caecff993017ac1b64aa5d/scikit_learn-1.8.0-cp312-cp312-win_amd64.whl (8.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 426.8 kB/s eta 0:00:00
+Collecting scipy>=1.0.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a2/84/dc08d77fbf3d87d3ee27f6a0c6dcce1de5829a64f2eae85a0ecc1f0daa73/scipy-1.17.1-cp312-cp312-win_amd64.whl (36.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.5/36.5 MB 455.9 kB/s eta 0:00:00
+Collecting tqdm>=4.0.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.4/78.4 kB 396.1 kB/s eta 0:00:00
+Collecting dnspython<3.0.0,>=2.6.1 (from pymongo->-r .\knowledge\requirements.txt (line 13))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ba/5a/18ad964b0086c6e62e2e7500f7edc89e3faa45033c71c1893d34eed2b2de/dnspython-2.8.0-py3-none-any.whl (331 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 331.1/331.1 kB 360.1 kB/s eta 0:00:00
+Collecting click>=8.1.7 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl (116 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.6/116.6 kB 310.2 kB/s eta 0:00:00
+Collecting loguru>=0.7.2 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0c/29/0348de65b8cc732daa3e33e67806420b2ae89bdce2b04af740289c5c6c8c/loguru-0.7.3-py3-none-any.whl (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 410.8 kB/s eta 0:00:00
+Collecting httpx (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 336.6 kB/s eta 0:00:00
+Collecting pillow>=11.0.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5d/7b/25a221d2c761c6a8ae21bfa3874988ff2583e19cf8a27bf2fee358df7942/pillow-12.2.0-cp312-cp312-win_amd64.whl (7.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 351.5 kB/s eta 0:00:00
+Collecting pypdfium2>=4.30.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/19/55/da7223d4202b2461f4f889b0baf10dddec3db7f88e6fd8c52db4a516eecd/pypdfium2-5.8.0-py3-none-win_amd64.whl (3.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 536.1 kB/s eta 0:00:00
+Collecting pypdf>=5.6.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9e/44/fee070a16639d9869bb6a7e0f3a1b3946da1d66f32b9260b4d19cb90d7b2/pypdf-6.12.2-py3-none-any.whl (343 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.9/343.9 kB 667.2 kB/s eta 0:00:00
+Collecting reportlab (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a7/45/ea7fad10122440de6e845568d106bffdc456ca0e8a1d8ae10b46016087e4/reportlab-4.5.1-py3-none-any.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 649.2 kB/s eta 0:00:00
+Collecting pdftext>=0.6.3 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bc/b9/4437bb89f04e57f48c96492a50d6168da5e201940de6620730d390449991/pdftext-0.6.3-py3-none-any.whl (23 kB)
+Collecting modelscope>=1.26.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/15/f5/286dd2d21802e4954a28e73913af7bc79e882f23fcd98db2b5810fc590cf/modelscope-1.37.1-py3-none-any.whl (6.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.1/6.1 MB 458.8 kB/s eta 0:00:00
+Collecting json-repair>=0.46.2 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ee/87/49b20c6b81493d55c311f711ed87319d0fbad8bd0bbfbe36e52103af36bd/json_repair-0.59.10-py3-none-any.whl (47 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.7/47.7 kB 399.0 kB/s eta 0:00:00
+Collecting opencv-python>=4.11.0.86 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e9/a5/1be1516390333ff9be3a9cb648c9f33df79d5096e5884b5df71a588af463/opencv_python-4.13.0.92-cp37-abi3-win_amd64.whl (40.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.2/40.2 MB 7.4 MB/s eta 0:00:00
+Collecting fast-langdetect<0.3.0,>=0.2.3 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/27/da/c621e64d4bc23f485468295bb7d4a5f2290ebb4d342c8dc448ab66808071/fast_langdetect-0.2.5-py3-none-any.whl (786 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 786.6/786.6 kB 12.5 MB/s eta 0:00:00
+Collecting beautifulsoup4<5,>=4.13.5 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1a/39/47f9197bdd44df24d67ac8893641e16f386c984a0619ef2ee4c51fbbc019/beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.7/107.7 kB ? eta 0:00:00
+Collecting magika<1.1.0,>=0.6.2 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/62/ae/d414195bab93835ce764cb7471e7bf94e0eed396e455e1ff14de7f17d2de/magika-1.0.3-py3-none-win_amd64.whl (13.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 8.1 MB/s eta 0:00:00
+Collecting mineru-vl-utils<2,>=1.0.2 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/39/09/9a5e0975622ab4f8b3592961cf6175e39473a3f13964d3d42156666756b0/mineru_vl_utils-1.0.2-py3-none-any.whl (92 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.6/92.6 kB 5.5 MB/s eta 0:00:00
+Collecting python-docx<2,>=1.2.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d0/00/1e03a4989fa5795da308cd774f05b704ace555a70f9bf9d3be057b680bcf/python_docx-1.2.0-py3-none-any.whl (252 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 253.0/253.0 kB 15.2 MB/s eta 0:00:00
+Collecting pypptx-with-oxml<2,>=1.0.3 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fb/d8/940fcaa6a1f3763d72751b6bc8054f40beeacd6e9e5b19069c6c73dab5af/pypptx_with_oxml-1.0.3-py3-none-any.whl (493 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 493.0/493.0 kB 5.1 MB/s eta 0:00:00
+Collecting mammoth<2,>=1.11.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/14/a4/0cce02ffb7c75211e7723250bf254c7a320a17368345859beba75637262a/mammoth-1.12.0-py2.py3-none-any.whl (54 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.9/54.9 kB 2.8 MB/s eta 0:00:00
+Collecting pylatexenc<3,>=2.10 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5d/ab/34ec41718af73c00119d0351b7a2531d2ebddb51833a36448fc7b862be60/pylatexenc-2.10.tar.gz (162 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 162.6/162.6 kB 9.5 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting lxml<7.0.0,>=4.0.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1b/89/45198e9624762af2dfd2cb8782598477ceb29f6e59caab560388ae1f4ec1/lxml-6.1.1-cp312-cp312-win_amd64.whl (4.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 10.2 MB/s eta 0:00:00
+Collecting openpyxl<4,>=3.1.5 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.9/250.9 kB 15.0 MB/s eta 0:00:00
+Collecting fastapi (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e0/82/45359b62a067409bd929ae8a56b8ed13e5a8c8a61194b3c236920999ab83/fastapi-0.136.3-py3-none-any.whl (117 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.5/117.5 kB 7.1 MB/s eta 0:00:00
+Collecting python-multipart (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8f/cb/769cfc37177252872a45a71f3fbdde9d51b471a3f3c14bfe95dde3407386/python_multipart-0.0.29-py3-none-any.whl (29 kB)
+Collecting uvicorn (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/01/be/72532be3da7acc5fdfbccdb95215cd04f995a0886532a5b423f929cda4cc/uvicorn-0.48.0-py3-none-any.whl (71 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.4/71.4 kB ? eta 0:00:00
+Collecting griffelib<3,>=2 (from openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/11/8c/c9138d881c79aa0ea9ed83cbd58d5ca75624378b38cee225dcf5c42cc91f/griffelib-2.0.2-py3-none-any.whl (142 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.4/142.4 kB 8.3 MB/s eta 0:00:00
+Collecting mcp<2,>=1.19.0 (from openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fd/73/42d9596facebdb533b7f0b86c1b0364ef350d1f8ba78b1052e8a58b48b65/mcp-1.27.1-py3-none-any.whl (216 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.3/216.3 kB 12.9 MB/s eta 0:00:00
+Collecting types-requests<3,>=2.0 (from openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1c/bc/b139710a3b6018f7fb2b9508b35c8af564e61bf2bf4fa619d088f3e16f85/types_requests-2.33.0.20260518-py3-none-any.whl (21 kB)
+Collecting websockets<17,>=15.0 (from openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c3/f0/f3a17365441ed1c27f850a80b2bc680a0fa9505d733fe152fdf5e98c1c0b/websockets-16.0-cp312-cp312-win_amd64.whl (178 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.7/178.7 kB ? eta 0:00:00
+Collecting soupsieve>=1.6.1 (from beautifulsoup4<5,>=4.13.5->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5e/f5/0c41cb68dcae6b7de4fac4188a3a9589e21fb31df21ea3a2e888db95e6c9/soupsieve-2.8.4-py3-none-any.whl (37 kB)
+Collecting colorama (from click>=8.1.7->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting robust-downloader>=0.0.2 (from fast-langdetect<0.3.0,>=0.2.3->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/56/a1/779e9d0ebbdc704411ce30915a1105eb01aeaa9e402d7e446613ff8fb121/robust_downloader-0.0.2-py3-none-any.whl (15 kB)
+Collecting fasttext-predict>=0.9.2.4 (from fast-langdetect<0.3.0,>=0.2.3->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a7/c5/11c1f50b47f492d562974878ec34b6a0b84699f8b05e1cc3a75c65349784/fasttext_predict-0.9.2.4-cp312-cp312-win_amd64.whl (104 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 104.9/104.9 kB 6.3 MB/s eta 0:00:00
+Collecting filelock>=3.10.0 (from huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/81/47/dd9a212ef6e343a6857485ffe25bba537304f1913bdbed446a23f7f592e1/filelock-3.29.0-py3-none-any.whl (39 kB)
+Collecting fsspec>=2023.5.0 (from huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d5/0c/043d5e551459da400957a1395e0febbf771446ff34291afcbe3d8be2a279/fsspec-2026.4.0-py3-none-any.whl (203 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 203.4/203.4 kB 12.1 MB/s eta 0:00:00
+Collecting hf-xet<2.0.0,>=1.4.3 (from huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/af/37/1b6def445c567286b50aa3b33828158e135b1be44938dde59f11382a500c/hf_xet-1.5.0-cp37-abi3-win_amd64.whl (4.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 9.8 MB/s eta 0:00:00
+Collecting packaging>=20.9 (from huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl (100 kB)
+Collecting pyyaml>=5.1 (from huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/86/bf/899e81e4cce32febab4fb42bb97dcdf66bc135272882d1987881a4b519e9/pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 154.0/154.0 kB 9.6 MB/s eta 0:00:00
+Collecting typer<0.26.0,>=0.20.0 (from huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/3f/f9/2b3ff4e56e5fa7debfaf9eb135d0da96f3e9a1d5b27222223c7296336e5f/typer-0.25.1-py3-none-any.whl (58 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.4/58.4 kB 3.0 MB/s eta 0:00:00
+Collecting anyio (from httpx->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/da/42/e921fccf5015463e32a3cf6ee7f980a6ed0f395ceeaa45060b61d86486c2/anyio-4.13.0-py3-none-any.whl (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.4/114.4 kB 6.5 MB/s eta 0:00:00
+Collecting httpcore==1.* (from httpx->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 4.6 MB/s eta 0:00:00
+Collecting idna (from httpx->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/94/16/70255075a9859a0e3adb789b68ceb0e210dec03934245fd98d248226572f/idna-3.16-py3-none-any.whl (74 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.2/74.2 kB 4.0 MB/s eta 0:00:00
+Collecting h11>=0.16 (from httpcore==1.*->httpx->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl (37 kB)
+Collecting jsonpatch<2.0.0,>=1.33.0 (from langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/73/07/02e16ed01e04a374e644b575638ec7987ae846d25ad97bcc9945a3ee4b0e/jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
+Collecting langchain-protocol>=0.0.14 (from langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1d/7a/9c97a7b9cbe4c5dc6a44cdb1545450c28f0c8ce89b9c1f0ee7fbad896263/langchain_protocol-0.0.15-py3-none-any.whl (7.0 kB)
+Collecting langsmith<1.0.0,>=0.3.45 (from langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7e/c5/28f99eccd79ce89ec93de9a5039a74ddf4740f2d9671b0a06c5d2e200914/langsmith-0.8.6-py3-none-any.whl (399 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 400.0/400.0 kB 12.2 MB/s eta 0:00:00
+Collecting tenacity!=8.4.0,<10.0.0,>=8.1.0 (from langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d7/c1/eb8f9debc45d3b7918a32ab756658a0904732f75e555402972246b0b8e71/tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting uuid-utils<1.0,>=0.12.0 (from langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/87/1f/4126c3ccbc2d98a613664e55f6ab6d7bd4b98424a04486e4fcc76549af15/uuid_utils-0.16.0-cp312-cp312-win_amd64.whl (174 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 174.6/174.6 kB 5.1 MB/s eta 0:00:00
+Collecting ormsgpack>=1.12.0 (from langgraph-checkpoint<5.0.0,>=4.1.0->langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7a/0c/9803aa883d18c7ef197213cd2cbf73ba76472a11fe100fb7dab2884edf48/ormsgpack-1.12.2-cp312-cp312-win_amd64.whl (117 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.5/117.5 kB 7.1 MB/s eta 0:00:00
+Collecting win32-setctime>=1.0.0 (from loguru>=0.7.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e1/07/c6fe3ad3e685340704d314d765b7912993bcb8dc198f0e7a89382d37974b/win32_setctime-1.2.0-py3-none-any.whl (4.1 kB)
+Collecting onnxruntime>=1.17.0 (from magika<1.1.0,>=0.6.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/44/fc/026d0a7162b9c2153dac292baea9e027c42304dc1d9dc6f8ff5b4cfbaedd/onnxruntime-1.26.0-cp312-cp312-win_amd64.whl (13.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 10.5 MB/s eta 0:00:00
+Collecting cobble<0.2,>=0.1.3 (from mammoth<2,>=1.11.0->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d5/e1/3714a2f371985215c219c2a70953d38e3eed81ef165aed061d21de0e998b/cobble-0.1.4-py3-none-any.whl (4.0 kB)
+Collecting httpx-sse>=0.4 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d2/fd/6668e5aec43ab844de6fc74927e155a3b37bf40d7c3790e49fc0406b6578/httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+Collecting jsonschema>=4.20.0 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB ? eta 0:00:00
+Collecting pydantic-settings>=2.5.2 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ae/8d/f1af3832f5e6eb13ba94ee809e72b8ecb5eef226d27ee0bef7d963d943c7/pydantic_settings-2.14.1-py3-none-any.whl (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 3.2 MB/s eta 0:00:00
+Collecting pyjwt[crypto]>=2.10.1 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a3/5e/ecf12fdb62546d64385c158514e9b2b671f7832108ef2ecd2020ce0af2d1/pyjwt-2.13.0-py3-none-any.whl (31 kB)
+Collecting pywin32>=310 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d1/a8/a0e8d07d4d051ec7502cd58b291ec98dcc0c3fff027caad0470b72cfcc2f/pywin32-311-cp312-cp312-win_amd64.whl (9.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.5/9.5 MB 9.5 MB/s eta 0:00:00
+Collecting sse-starlette>=1.6.1 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/dc/67/805710444ea8cc75fbf70b920ed431a560c4bf9c57f7d5a3117213189399/sse_starlette-3.4.4-py3-none-any.whl (16 kB)
+Collecting starlette>=0.27 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/93/79/920b8e0a8b20f793e8d64855095cb8febabf6175b8550b6f7a547d813891/starlette-1.1.0-py3-none-any.whl (72 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.9/72.9 kB 3.9 MB/s eta 0:00:00
+Collecting typing-inspection>=0.4.1 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Collecting httpx-retries (from mineru-vl-utils<2,>=1.0.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c5/a8/aadeaa9a28510727d538636ee8688f0782a98523147852b29404ce696f1b/httpx_retries-0.5.0-py3-none-any.whl (8.9 kB)
+Collecting aiofiles (from mineru-vl-utils<2,>=1.0.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bc/8a/340a1555ae33d7354dbca4faa54948d76d89a27ceef032c8c3bc661d003e/aiofiles-25.1.0-py3-none-any.whl (14 kB)
+Collecting distro<2,>=1.7.0 (from openai<3.0.0,>=2.26.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl (20 kB)
+Collecting jiter<1,>=0.10.0 (from openai<3.0.0,>=2.26.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/95/bf/8ead82a87495149542748e828d153fd232a512a22c83b02c4815c1a9c7d8/jiter-0.15.0-cp312-cp312-win_amd64.whl (197 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 197.3/197.3 kB 11.7 MB/s eta 0:00:00
+Collecting sniffio (from openai<3.0.0,>=2.26.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl (10 kB)
+Collecting et-xmlfile (from openpyxl<4,>=3.1.5->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+Collecting python-dateutil>=2.8.2 (from pandas>=1.2.4->pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 6.9 MB/s eta 0:00:00
+Collecting tzdata (from pandas>=1.2.4->pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ce/e4/dccd7f47c4b64213ac01ef921a1337ee6e30e8c6466046018326977efd95/tzdata-2026.2-py2.py3-none-any.whl (349 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 349.3/349.3 kB 5.4 MB/s eta 0:00:00
+Collecting pypdfium2>=4.30.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/25/bd/56d9ec6b9f0fc4e0d95288759f3179f0fcd34b1a1526b75673d2f6d5196f/pypdfium2-4.30.0-py3-none-win_amd64.whl (2.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 3.1 MB/s eta 0:00:00
+Collecting annotated-types>=0.6.0 (from pydantic>=2.7.4->langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2.7.4->langgraph->-r .\knowledge\requirements.txt (line 9))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/40/8c/985c1d41ea1107c2534abd9870e4ed5c8e7669b5c308297835c001e7a1c4/pydantic_core-2.46.4-cp312-cp312-win_amd64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 4.6 MB/s eta 0:00:00
+Collecting XlsxWriter>=0.5.7 (from pypptx-with-oxml<2,>=1.0.3->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/3a/0c/3662f4a66880196a590b202f0db82d919dd2f89e99a27fadef91c4a33d41/xlsxwriter-3.2.9-py3-none-any.whl (175 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 175.3/175.3 kB 5.3 MB/s eta 0:00:00
+Collecting charset_normalizer<4,>=2 (from requests>=2.20.0->pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/35/d9/0e7dffa06c5ab081f75b1b786f0aefc88365825dfcd0ac544bdb7b2b6853/charset_normalizer-3.4.7-cp312-cp312-win_amd64.whl (159 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.3/159.3 kB 1.9 MB/s eta 0:00:00
+Collecting joblib>=1.3.0 (from scikit-learn>=0.22.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 309.1/309.1 kB 1.7 MB/s eta 0:00:00
+Collecting threadpoolctl>=3.2.0 (from scikit-learn>=0.22.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/32/d5/f9a850d79b0851d1d4ef6456097579a9005b31fea68726a4ae5f2d82ddd9/threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Collecting regex (from tiktoken<1.0.0,>=0.7.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/78/87/240d36864f9e48ace85f72e79ced97ceb7f27ce87739a947dcb834b4e6bc/regex-2026.5.9-cp312-cp312-win_amd64.whl (277 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 277.8/277.8 kB 535.1 kB/s eta 0:00:00
+Collecting setuptools>=78.1.1 (from pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e1/e3/c164c88b2e5ce7b24d667b9bd83589cf4f3520d97cad01534cd3c4f55fdb/setuptools-81.0.0-py3-none-any.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 3.1 MB/s eta 0:00:00
+Collecting sympy>=1.13.3 (from torch>=1.11.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl (6.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 724.0 kB/s eta 0:00:00
+Collecting networkx>=2.5.1 (from torch>=1.11.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 615.5 kB/s eta 0:00:00
+Collecting jinja2 (from torch>=1.11.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 884.1 kB/s eta 0:00:00
+Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers<6.0.0,>=4.41.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/65/71/0670843133a43d43070abeb1949abfdef12a86d490bea9cd9e18e37c5ff7/tokenizers-0.22.2-cp39-abi3-win_amd64.whl (2.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 1.7 MB/s eta 0:00:00
+Collecting safetensors>=0.4.3 (from transformers<6.0.0,>=4.41.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5d/e6/ec8471c8072382cb91233ba7267fd931219753bb43814cbc71757bfd4dab/safetensors-0.7.0-cp38-abi3-win_amd64.whl (341 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 341.4/341.4 kB 1.3 MB/s eta 0:00:00
+Collecting argon2-cffi-bindings (from argon2-cffi->minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e2/c6/a759ece8f1829d1f162261226fbfd2c6832b3ff7657384045286d2afa384/argon2_cffi_bindings-25.1.0-cp39-abi3-win_amd64.whl (31 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Collecting lmdeploy<0.12,>=0.10.2 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c1/5e/39b781691419590e76a80b372ae52ba490d61fcf1ee59ac832f3d9ac5bee/lmdeploy-0.11.1-cp312-cp312-win_amd64.whl (28.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 28.7/28.7 MB 649.5 kB/s eta 0:00:00
+Collecting qwen-vl-utils<1,>=0.0.14 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c4/43/80f67e0336cb2fc725f8e06f7fe35c1d0fe946f4d2b8b2175e797e07349e/qwen_vl_utils-0.0.14-py3-none-any.whl (8.1 kB)
+Collecting boto3>=1.28.43 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/af/c0/7d687e40f4b7046ede66026ecd1b0a93d47afe26d9170f5926a1605c8641/boto3-1.43.16-py3-none-any.whl (140 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.5/140.5 kB 556.8 kB/s eta 0:00:00
+Collecting botocore<1.44.0,>=1.43.16 (from boto3>=1.28.43->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/46/8f/25933240485c0662bb3fa430ed0c6b8b8124ab3bc136154c07ce12644cb0/botocore-1.43.16-py3-none-any.whl (15.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.1/15.1 MB 4.3 MB/s eta 0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3>=1.28.43->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.18.0,>=0.17.0 (from boto3>=1.28.43->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/85/dd/904873250a6554fbae40cddbf9198e3cc37a2f1319d5e1a5ce82fe269c17/s3transfer-0.17.1-py3-none-any.whl (88 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.3/88.3 kB 4.9 MB/s eta 0:00:00
+Collecting jsonpointer>=1.9 (from jsonpatch<2.0.0,>=1.33.0->langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9e/6a/a83720e953b1682d2d109d3c2dbb0bc9bf28cc1cbc205be4ef4be5da709d/jsonpointer-3.1.1-py3-none-any.whl (7.7 kB)
+Collecting attrs>=22.2.0 (from jsonschema>=4.20.0->mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 3.6 MB/s eta 0:00:00
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/39/3b/f786af9957306fdc38a74cef405b7b93180f481fb48453a114bb6465744a/rpds_py-0.30.0-cp312-cp312-win_amd64.whl (240 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 240.5/240.5 kB 7.4 MB/s eta 0:00:00
+Collecting requests-toolbelt>=1.0.0 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/3f/51/d4db610ef29373b879047326cbf6fa98b6c1969d6f6dc423279de2b1be2c/requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.5/54.5 kB ? eta 0:00:00
+Collecting zstandard>=0.23.0 (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.4.0->langchain-openai->-r .\knowledge\requirements.txt (line 8))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/79/3b/fa54d9015f945330510cb5d0b0501e8253c127cca7ebe8ba46a965df18c5/zstandard-0.25.0-cp312-cp312-win_amd64.whl (506 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 506.3/506.3 kB 3.2 MB/s eta 0:00:00
+Collecting accelerate>=0.29.3 (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7e/46/02ac5e262d4af18054b3e922b2baedbb2a03289ee792162de60a865defc5/accelerate-1.13.0-py3-none-any.whl (383 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 3.0 MB/s eta 0:00:00
+Collecting aiohttp (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/aa/ca/eadf6f9c8fa5e31d40993e3db153fb5ed0b11008ad5d9de98a95045bed84/aiohttp-3.13.5-cp312-cp312-win_amd64.whl (460 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 460.4/460.4 kB 959.9 kB/s eta 0:00:00
+Collecting cloudpickle (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Collecting einops (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl (65 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.6/65.6 kB 893.5 kB/s eta 0:00:00
+Collecting fire (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e5/4c/93d0f85318da65923e4b91c1c2ff03d8a458cbefebe3bc612a6693c7906d/fire-0.7.1-py3-none-any.whl (115 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.9/115.9 kB 677.6 kB/s eta 0:00:00
+Collecting mmengine-lite (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/38/2d/06997f8e4dcd6e009d2f1dd6d02b0cf089025a418e9a239663b0d23e6037/mmengine_lite-0.10.7-py3-none-any.whl (452 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 452.8/452.8 kB 555.2 kB/s eta 0:00:00
+Collecting openai_harmony (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/40/1f/c83cf5a206c263ee70448a5ae4264682555f4d0b5bed0d2cc6ca1108103d/openai_harmony-0.0.8-cp38-abi3-win_amd64.whl (2.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 539.6 kB/s eta 0:00:00
+Collecting partial_json_parser (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/42/32/658973117bf0fd82a24abbfb94fe73a5e86216e49342985e10acce54775a/partial_json_parser-0.2.1.1.post7-py3-none-any.whl (10 kB)
+Collecting peft<=0.14.0 (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/88/05/e58e3aaa36544d30a917814e336fc65a746f708e5874945e92999bc22fa3/peft-0.14.0-py3-none-any.whl (374 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.8/374.8 kB 388.7 kB/s eta 0:00:00
+Collecting prometheus_client (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8d/9b/d4b1e644385499c8346fa9b622a3f030dce14cd6ef8a1871c221a17a67e7/prometheus_client-0.25.0-py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.2/64.2 kB 345.6 kB/s eta 0:00:00
+Collecting pybase64 (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/83/e3/507ab649d8c3512c258819c51d25c45d6e29d9ca33992593059e7b646a33/pybase64-1.4.3-cp312-cp312-win_amd64.whl (35 kB)
+Collecting pyzmq (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fc/7f/a21b20d577e4100c6a41795842028235998a643b1ad406a6d4163ea8f53e/pyzmq-27.1.0-cp312-abi3-win_amd64.whl (619 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 619.5/619.5 kB 481.2 kB/s eta 0:00:00
+Collecting ray (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/10/f7/5acb86fc9625a0e6bbc40e1c7d42c60770e78585439a921c32738b6d675a/ray-2.55.1-cp312-cp312-win_amd64.whl (27.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 27.9/27.9 MB 517.6 kB/s eta 0:00:00
+Collecting sentencepiece (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2d/81/92df5673c067148c2545b1bfe49adfd775bcc3a169a047f5a0e6575ddaca/sentencepiece-0.2.1-cp312-cp312-win_amd64.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 451.7 kB/s eta 0:00:00
+Collecting shortuuid (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c0/44/21d6bf170bf40b41396480d8d49ad640bca3f2b02139cd52aa1e272830a5/shortuuid-1.0.13-py3-none-any.whl (10 kB)
+Collecting torch>=1.11.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/af/8a/5c87f08e3abd825c7dfecef5a0f1d9aa5df5dd0e3fd1fa2f490a8e512402/torch-2.8.0-cp312-cp312-win_amd64.whl (241.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 241.3/241.3 MB 754.4 kB/s eta 0:00:00
+Collecting torchvision<=0.23.0,>=0.15.0 (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/82/c1/c2fe6d61e110a8d0de2f94276899a2324a8f1e6aee559eb6b4629ab27466/torchvision-0.23.0-cp312-cp312-win_amd64.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 748.5 kB/s eta 0:00:00
+Collecting xgrammar (from lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/57/39/69a5ba4dfa5e11a36265f69de3e16ee65ac9e77840c010056a2d8e99a875/xgrammar-0.2.1-cp312-cp312-win_amd64.whl (7.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.4/7.4 MB 733.0 kB/s eta 0:00:00
+Collecting flatbuffers (from onnxruntime>=1.17.0->magika<1.1.0,>=0.6.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Collecting cryptography>=3.4.0 (from pyjwt[crypto]>=2.10.1->mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f4/ac/8ac51b4a5fc5932eb7ee5c517ba7dc8cd834f0048962b6b352f00f41ebf9/cryptography-48.0.0-cp311-abi3-win_amd64.whl (3.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 2.7 MB/s eta 0:00:00
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=1.2.4->pymilvus[model]->-r .\knowledge\requirements.txt (line 11))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting av (from qwen-vl-utils<1,>=0.0.14->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d9/d5/3261bd2c6b7f6c0aa8379fc970d1ecf496330990b992ad28607785074268/av-17.0.1-cp311-abi3-win_amd64.whl (28.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 28.9/28.9 MB 493.0 kB/s eta 0:00:00
+Collecting colorlog (from robust-downloader>=0.0.2->fast-langdetect<0.3.0,>=0.2.3->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/6d/c1/e419ef3723a074172b68aaa89c9f3de486ed4c2399e2dbd8113a4fdcaf9e/colorlog-6.10.1-py3-none-any.whl (11 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=1.11.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 801.8 kB/s eta 0:00:00
+Collecting shellingham>=1.3.0 (from typer<0.26.0,>=0.20.0->huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Collecting rich>=13.8.0 (from typer<0.26.0,>=0.20.0->huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl (310 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 875.8 kB/s eta 0:00:00
+Collecting cffi>=1.0.1 (from argon2-cffi-bindings->argon2-cffi->minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f8/ed/13bd4418627013bec4ed6e54283b1959cf6db888048c7cf4b4c3b5b36002/cffi-2.0.0-cp312-cp312-win_amd64.whl (183 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 183.6/183.6 kB 740.7 kB/s eta 0:00:00
+Collecting MarkupSafe>=2.0 (from jinja2->torch>=1.11.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/aa/5b/bec5aa9bbbb2c946ca2733ef9c4ca91c91b6a24580193e891b5f7dbe8e1e/markupsafe-3.0.3-cp312-cp312-win_amd64.whl (15 kB)
+Collecting gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/38/3c/1568ee82f0e4308612aaf964168e93b7f2adb64c3e77b7877fd397e773bf/gradio-6.8.0-py3-none-any.whl (24.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.2/24.2 MB 527.4 kB/s eta 0:00:00
+Collecting gradio-pdf>=0.0.22 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/52/e8/e8c4e4261cc381807705b964aab40d95f345a4c1d9d7995afe6539cbd089/gradio_pdf-0.0.24-py3-none-any.whl (320 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 320.6/320.6 kB 405.2 kB/s eta 0:00:00
+Collecting ftfy<7,>=6.3.1 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ab/6e/81d47999aebc1b155f81eca4477a616a70f238a2549848c38983f3c22a82/ftfy-6.3.1-py3-none-any.whl (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.8/44.8 kB 314.4 kB/s eta 0:00:00
+Collecting shapely<3,>=2.0.7 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ec/bf/cb6c1c505cb31e818e900b9312d514f381fbfa5c4363edfce0fcc4f8c1a4/shapely-2.1.2-cp312-cp312-win_amd64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 529.6 kB/s eta 0:00:00
+Collecting pyclipper<2,>=1.3.0 (from mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/97/77/dfea08e3b230b82ee22543c30c35d33d42f846a77f96caf7c504dd54fab1/pyclipper-1.4.0-cp312-cp312-win_amd64.whl (104 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 104.6/104.6 kB 548.7 kB/s eta 0:00:00
+Collecting transformers<6.0.0,>=4.41.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/03/b8/e484ef633af3887baeeb4b6ad12743363af7cce68ae51e938e00aaa0529d/transformers-4.57.6-py3-none-any.whl (12.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 705.0 kB/s eta 0:00:00
+Collecting huggingface-hub>=0.23.0 (from sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a8/af/48ac8483240de756d2438c380746e7130d1c6f75802ef22f3c6d49982787/huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 523.2 kB/s eta 0:00:00
+Collecting psutil (from accelerate>=0.29.3->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b4/90/e2159492b5426be0c1fef7acba807a03511f97c5f86b3caeda6ad92351a7/psutil-7.2.2-cp37-abi3-win_amd64.whl (137 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.7/137.7 kB 678.2 kB/s eta 0:00:00
+Collecting pycparser (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->minio->-r .\knowledge\requirements.txt (line 7))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl (48 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 kB 807.1 kB/s eta 0:00:00
+Collecting wcwidth (from ftfy<7,>=6.3.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/41/52/e465037f5375f43533d1a80b6923955201596a99142ed524d77b571a1418/wcwidth-0.7.0-py3-none-any.whl (110 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 110.8/110.8 kB 584.8 kB/s eta 0:00:00
+Collecting aiofiles (from mineru-vl-utils<2,>=1.0.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a5/45/30bb92d442636f570cb5651bc661f52b610e2eec3f891a5dc3a4c3667db0/aiofiles-24.1.0-py3-none-any.whl (15 kB)
+Collecting brotli>=1.1.0 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1c/4e/bc1dcac9498859d5e353c9b153627a3752868a9d5f05ce8dedd81a2354ab/brotli-1.2.0-cp312-cp312-win_amd64.whl (369 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 369.1/369.1 kB 883.9 kB/s eta 0:00:00
+Collecting ffmpy (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/55/56/dd3669eccebb6d8ac81e624542ebd53fe6f08e1b8f2f8d50aeb7e3b83f99/ffmpy-1.0.0-py3-none-any.whl (5.6 kB)
+Collecting gradio-client==2.2.0 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c2/49/86b919727b5d6574528d5d9e67c6455bb707a3654abc87d61d7f1d742395/gradio_client-2.2.0-py3-none-any.whl (58 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.3/58.3 kB 1.0 MB/s eta 0:00:00
+Collecting groovy~=0.1 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/28/27/3d6dcadc8a3214d8522c1e7f6a19554e33659be44546d44a2f7572ac7d2a/groovy-0.1.2-py3-none-any.whl (14 kB)
+Collecting pydub (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a6/53/d78dc063216e62fc55f6b2eebb447f6a4b0a59f55c8406376f76bf959b08/pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+Collecting pytz>=2017.2 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ec/dd/96da98f892250475bdf2328112d7468abdd4acc7b902b6af23f4ed958ea0/pytz-2026.2-py2.py3-none-any.whl (510 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 510.1/510.1 kB 415.5 kB/s eta 0:00:00
+Collecting safehttpx<0.2.0,>=0.1.7 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2e/a3/0f0b7d78e2f1eb9e8e1afbff1d2bff8d60144aee17aca51c065b516743dd/safehttpx-0.1.7-py3-none-any.whl (9.0 kB)
+Collecting semantic-version~=2.0 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/6a/23/8146aad7d88f4fcb3a6218f41a60f6c2d4e3a72de72da1825dc7c8f7877c/semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+Collecting starlette>=0.27 (from mcp<2,>=1.19.0->openai-agents->-r .\knowledge\requirements.txt (line 15))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/81/0d/13d1d239a25cbfb19e740db83143e95c772a1fe10202dda4b76792b114dd/starlette-0.52.1-py3-none-any.whl (74 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.3/74.3 kB 315.4 kB/s eta 0:00:00
+Collecting tomlkit<0.14.0,>=0.12.0 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bd/75/8539d011f6be8e29f339c42e633aae3cb73bffa95dd0f9adec09b9c58e85/tomlkit-0.13.3-py3-none-any.whl (38 kB)
+Collecting typer<1.0,>=0.12 (from gradio!=6.0.0,!=6.0.1,!=6.0.2,!=6.1.0,!=6.2.0,!=6.3.0,!=6.4.0,!=6.5.0,!=6.5.1,!=6.6.0,!=6.7.0,<6.9.0,>=5.49.1->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8b/a5/6ffd702beda8798b2b82ff70805ed4a66d963557e43a5d1823ab456251a4/typer-0.26.2-py3-none-any.whl (123 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.1/123.1 kB 328.1 kB/s eta 0:00:00
+Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer<0.26.0,>=0.20.0->huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 kB 346.6 kB/s eta 0:00:00
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer<0.26.0,>=0.20.0->huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f4/7e/a72dd26f3b0f4f2bf1dd8923c85f7ceb43172af56d63c7383eb62b332364/pygments-2.20.0-py3-none-any.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 476.4 kB/s eta 0:00:00
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5f/fc/a7bf5b6e4e617b45f90f2d9d2a68519c249c81dd4fc2658c7a2a61c4f4b7/aiohappyeyeballs-2.6.2-py3-none-any.whl (15 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fb/76/641ae371508676492379f16e2fa48f4e2c11741bd63c48be4b12a6b09cba/aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b8/af/38e51a553dd66eb064cdf193841f16f077585d4d28394c2fa6235cb41765/frozenlist-1.8.0-cp312-cp312-win_amd64.whl (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 434.8 kB/s eta 0:00:00
+Collecting multidict<7.0,>=4.5 (from aiohttp->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/80/31/0b2517913687895f5904325c2069d6a3b78f66cc641a86a2baf75a05dcbb/multidict-6.7.1-cp312-cp312-win_amd64.whl (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.1/46.1 kB 328.6 kB/s eta 0:00:00
+Collecting propcache>=0.2.0 (from aiohttp->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/61/7c/5c0d34aa3024694d6dcb9271cdbdd08c4e47c1c0ad95ec7e7bc74cdea145/propcache-0.5.2-cp312-cp312-win_amd64.whl (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.3/42.3 kB 517.5 kB/s eta 0:00:00
+Collecting yarl<2.0,>=1.17.0 (from aiohttp->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a7/25/722e3b93bd687009afb2d59a35e13d30ddd8f80571445bb0c4e4ce26ec66/yarl-1.24.2-cp312-cp312-win_amd64.whl (92 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 661.3 kB/s eta 0:00:00
+Collecting termcolor (from fire->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/33/d1/8bb87d21e9aeb323cc03034f5eaf2c8f69841e40e4853c2627edf8111ed3/termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+Collecting addict (from mmengine-lite->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/6a/00/b08f23b7d7e1e14ce01419a467b583edbb93c6cdb8654e54a9cc579cd61f/addict-2.4.0-py3-none-any.whl (3.8 kB)
+Collecting yapf (from mmengine-lite->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/37/81/6acd6601f61e31cfb8729d3da6d5df966f80f374b78eff83760714487338/yapf-0.43.0-py3-none-any.whl (256 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 256.2/256.2 kB 463.1 kB/s eta 0:00:00
+Collecting msgpack<2.0.0,>=1.0.0 (from ray->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8c/ec/d431eb7941fb55a31dd6ca3404d41fbb52d99172df2e7707754488390910/msgpack-1.1.2-cp312-cp312-win_amd64.whl (72 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.7/72.7 kB 499.7 kB/s eta 0:00:00
+Collecting apache-tvm-ffi>=0.1.9 (from xgrammar->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/dc/99/f352cf1cce8f6f05584c4adf11de9eca07e6d217229bad6af35fb372926c/apache_tvm_ffi-0.1.11-cp312-abi3-win_amd64.whl (2.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 458.1 kB/s eta 0:00:00
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer<0.26.0,>=0.20.0->huggingface-hub>=0.23.0->sentence-transformers->-r .\knowledge\requirements.txt (line 12))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting platformdirs>=3.5.1 (from yapf->mmengine-lite->lmdeploy<0.12,>=0.10.2->mineru[all]->-r .\knowledge\requirements.txt (line 14))
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/75/a6/a0a304dc33b49145b21f4808d763822111e67d1c3a32b524a1baf947b6e1/platformdirs-4.9.6-py3-none-any.whl (21 kB)
+Building wheels for collected packages: pylatexenc
+  Building wheel for pylatexenc (pyproject.toml) ... done
+  Created wheel for pylatexenc: filename=pylatexenc-2.10-py3-none-any.whl size=136929 sha256=89d4ace4ef6a6ae648d6251c9d0d57889d8346d1047212c3c18134dc9bc14912
+  Stored in directory: c:\users\zy\appdata\local\pip\cache\wheels\62\cb\51\29937de9cd4f816a4459b0aed5250a439bccb395b0902d8e02
+Successfully built pylatexenc
+Installing collected packages: pywin32, pytz, pylatexenc, pydub, mpmath, flatbuffers, fasttext-predict, brotli, addict, zstandard, xxhash, XlsxWriter, win32-setctime, websockets, wcwidth, uuid-utils, urllib3, tzdata, typing-extensions, tomlkit, threadpoolctl, termcolor, tenacity, sympy, soupsieve, sniffio, six, shortuuid, shellingham, setuptools, sentencepiece, semantic-version, safetensors, rpds-py, regex, pyzmq, pyyaml, python-multipart, python-dotenv, pypdfium2, pypdf, pyparsing, pyjwt, pygments, pycryptodome, pycparser, pyclipper, pybase64, psutil, protobuf, propcache, prometheus_client, platformdirs, pillow, partial_json_parser, packaging, ormsgpack, orjson, numpy, networkx, multidict, msgpack, mdurl, MarkupSafe, lxml, jsonpointer, json-repair, joblib, jmespath, jiter, idna, httpx-sse, h11, groovy, griffelib, fsspec, frozenlist, filelock, ffmpy, et-xmlfile, einops, dnspython, distro, colorama, cobble, cloudpickle, charset_normalizer, certifi, cachetools, av, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, yapf, typing-inspection, types-requests, tqdm, shapely, scipy, requests, reportlab, referencing, python-docx, python-dateutil, pypptx-with-oxml, pymongo, pydantic-core, openpyxl, opencv-python, onnxruntime, markdown-it-py, mammoth, loguru, langchain-protocol, jsonpatch, jinja2, httpcore, grpcio, grandalf, ftfy, fire, colorlog, click, cffi, beautifulsoup4, apache-tvm-ffi, anyio, aiosignal, uvicorn, torch, tiktoken, starlette, scikit-learn, robust-downloader, rich, requests-toolbelt, qwen-vl-utils, pydantic, pandas, modelscope, magika, jsonschema-specifications, huggingface-hub, httpx, cryptography, botocore, argon2-cffi-bindings, aiohttp, typer, torchvision, tokenizers, sse-starlette, safehttpx, s3transfer, pymilvus, pydantic-settings, openai_harmony, openai, mmengine-lite, langsmith, langgraph-sdk, jsonschema, httpx-retries, gradio-client, fastapi, fast-langdetect, argon2-cffi, accelerate, transformers, ray, pdftext, minio, mineru-vl-utils, mcp, langchain-core, gradio, boto3, xgrammar, sentence-transformers, pymilvus.model, peft, openai-agents, mineru, langgraph-checkpoint, langchain-openai, gradio-pdf, lmdeploy, langgraph-prebuilt, langgraph
+Successfully installed MarkupSafe-3.0.3 XlsxWriter-3.2.9 accelerate-1.13.0 addict-2.4.0 aiofiles-24.1.0 aiohappyeyeballs-2.6.2 aiohttp-3.13.5 aiosignal-1.4.0 annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 apache-tvm-ffi-0.1.11 argon2-cffi-25.1.0 argon2-cffi-bindings-25.1.0 attrs-26.1.0 av-17.0.1 beautifulsoup4-4.14.3 boto3-1.43.16 botocore-1.43.16 brotli-1.2.0 cachetools-7.1.4 certifi-2026.5.20 cffi-2.0.0 charset_normalizer-3.4.7 click-8.4.1 cloudpickle-3.1.2 cobble-0.1.4 colorama-0.4.6 colorlog-6.10.1 cryptography-48.0.0 distro-1.9.0 dnspython-2.8.0 einops-0.8.2 et-xmlfile-2.0.0 fast-langdetect-0.2.5 fastapi-0.136.3 fasttext-predict-0.9.2.4 ffmpy-1.0.0 filelock-3.29.0 fire-0.7.1 flatbuffers-25.12.19 frozenlist-1.8.0 fsspec-2026.4.0 ftfy-6.3.1 gradio-6.8.0 gradio-client-2.2.0 gradio-pdf-0.0.24 grandalf-0.8 griffelib-2.0.2 groovy-0.1.2 grpcio-1.80.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 httpx-retries-0.5.0 httpx-sse-0.4.3 huggingface-hub-0.36.2 idna-3.16 jinja2-3.1.6 jiter-0.15.0 jmespath-1.1.0 joblib-1.5.3 json-repair-0.59.10 jsonpatch-1.33 jsonpointer-3.1.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 langchain-core-1.4.0 langchain-openai-1.2.2 langchain-protocol-0.0.15 langgraph-1.2.2 langgraph-checkpoint-4.1.1 langgraph-prebuilt-1.1.0 langgraph-sdk-0.3.15 langsmith-0.8.6 lmdeploy-0.11.1 loguru-0.7.3 lxml-6.1.1 magika-1.0.3 mammoth-1.12.0 markdown-it-py-4.2.0 mcp-1.27.1 mdurl-0.1.2 mineru-3.2.0 mineru-vl-utils-1.0.2 minio-7.2.20 mmengine-lite-0.10.7 modelscope-1.37.1 mpmath-1.3.0 msgpack-1.1.2 multidict-6.7.1 networkx-3.6.1 numpy-2.4.6 onnxruntime-1.26.0 openai-2.38.0 openai-agents-0.17.4 openai_harmony-0.0.8 opencv-python-4.13.0.92 openpyxl-3.1.5 orjson-3.11.9 ormsgpack-1.12.2 packaging-26.2 pandas-3.0.3 partial_json_parser-0.2.1.1.post7 pdftext-0.6.3 peft-0.14.0 pillow-12.2.0 platformdirs-4.9.6 prometheus_client-0.25.0 propcache-0.5.2 protobuf-7.35.0 psutil-7.2.2 pybase64-1.4.3 pyclipper-1.4.0 pycparser-3.0 pycryptodome-3.23.0 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.1 pydub-0.25.1 pygments-2.20.0 pyjwt-2.13.0 pylatexenc-2.10 pymilvus-3.0.0 pymilvus.model-0.3.2 pymongo-4.17.0 pyparsing-3.3.2 pypdf-6.12.2 pypdfium2-4.30.0 pypptx-with-oxml-1.0.3 python-dateutil-2.9.0.post0 python-docx-1.2.0 python-dotenv-1.2.2 python-multipart-0.0.29 pytz-2026.2 pywin32-311 pyyaml-6.0.3 pyzmq-27.1.0 qwen-vl-utils-0.0.14 ray-2.55.1 referencing-0.37.0 regex-2026.5.9 reportlab-4.5.1 requests-2.34.2 requests-toolbelt-1.0.0 rich-15.0.0 robust-downloader-0.0.2 rpds-py-0.30.0 s3transfer-0.17.1 safehttpx-0.1.7 safetensors-0.7.0 scikit-learn-1.8.0 scipy-1.17.1 semantic-version-2.10.0 sentence-transformers-5.5.1 sentencepiece-0.2.1 setuptools-81.0.0 shapely-2.1.2 shellingham-1.5.4 shortuuid-1.0.13 six-1.17.0 sniffio-1.3.1 soupsieve-2.8.4 sse-starlette-3.4.4 starlette-0.52.1 sympy-1.14.0 tenacity-9.1.4 termcolor-3.3.0 threadpoolctl-3.6.0 tiktoken-0.13.0 tokenizers-0.22.2 tomlkit-0.13.3 torch-2.8.0 torchvision-0.23.0 tqdm-4.67.3 transformers-4.57.6 typer-0.25.1 types-requests-2.33.0.20260518 typing-extensions-4.15.0 typing-inspection-0.4.2 tzdata-2026.2 urllib3-2.7.0 uuid-utils-0.16.0 uvicorn-0.48.0 wcwidth-0.7.0 websockets-16.0 win32-setctime-1.2.0 xgrammar-0.2.1 xxhash-3.7.0 yapf-0.43.0 yarl-1.24.2 zstandard-0.25.0
+WARNING: There was an error checking the latest version of pip.
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain>nvidia-smi
+Thu May 28 11:06:12 2026
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 457.49       Driver Version: 457.49       CUDA Version: 11.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name            TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce RTX 2060   WDDM  | 00000000:01:00.0  On |                  N/A |
+| N/A   54C    P8    11W /  N/A |   1601MiB /  6144MiB |      4%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A       156    C+G   ...518.78\msedgewebview2.exe    N/A      |
+|    0   N/A  N/A      1552    C+G   Insufficient Permissions        N/A      |
+|    0   N/A  N/A      6728    C+G   ...5.5.10049\QyGeePlayer.exe    N/A      |
+|    0   N/A  N/A      7704    C+G   ...lPanel\SystemSettings.exe    N/A      |
+|    0   N/A  N/A      8232    C+G   C:\Windows\explorer.exe         N/A      |
+|    0   N/A  N/A      9096    C+G   ...2txyewy\TextInputHost.exe    N/A      |
+|    0   N/A  N/A     10372    C+G   Insufficient Permissions        N/A      |
+|    0   N/A  N/A     11164    C+G   ...artMenuExperienceHost.exe    N/A      |
+|    0   N/A  N/A     11392    C+G   ...y\ShellExperienceHost.exe    N/A      |
+|    0   N/A  N/A     11564    C+G   ...5n1h2txyewy\SearchApp.exe    N/A      |
+|    0   N/A  N/A     11620    C+G   ...wekyb3d8bbwe\Video.UI.exe    N/A      |
+|    0   N/A  N/A     11848    C+G   ...ine\BaiduNetdiskUnite.exe    N/A      |
+|    0   N/A  N/A     12028    C+G   ...ge\Application\msedge.exe    N/A      |
+|    0   N/A  N/A     13948    C+G   ...14.5.5.10049\QyPlayer.exe    N/A      |
+|    0   N/A  N/A     14040    C+G   ...me\Application\chrone.exe    N/A      |
+|    0   N/A  N/A     16332    C+G   C:\Server\Typora\Typora.exe     N/A      |
+|    0   N/A  N/A     16424    C+G   C:\Server\drawio\draw.io.exe    N/A      |
+|    0   N/A  N/A     19052    C+G   ....4\jbr\bin\cef_server.exe    N/A      |
+|    0   N/A  N/A     20944    C+G   Insufficient Permissions        N/A      |
++-----------------------------------------------------------------------------+
+
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> python -c "import torch; print(torch.version.cuda)"
+None
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> pip show torch torchvision
+Name: torch
+Version: 2.8.0
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org/
+Author: PyTorch Team
+Author-email: packages@pytorch.org
+License: BSD-3-Clause
+Location: D:\workspace\python\PythonProject\shopkeeper_brain\knowledge\.venv\Lib\site-packages
+Requires: filelock, fsspec, jinja2, networkx, setuptools, sympy, typing-extensions
+Required-by: accelerate, lmdeploy, peft, sentence-transformers, torchvision, xgrammar
+---
+Name: torchvision
+Version: 0.23.0
+Summary: image and video datasets and models for torch deep learning
+Home-page: https://github.com/pytorch/vision
+Author: PyTorch Core Team
+Author-email: soumith@pytorch.org
+License: BSD
+Location: D:\workspace\python\PythonProject\shopkeeper_brain\knowledge\.venv\Lib\site-packages
+Requires: numpy, pillow, torch
+Required-by: lmdeploy
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> pip list | findstr torch
+WARNING: There was an error checking the latest version of pip.
+torch                     2.8.0
+torchvision               0.23.0
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> pip uninstall torch torchvision torchaudio -y
+Found existing installation: torch 2.8.0
+Uninstalling torch-2.8.0:
+  Successfully uninstalled torch-2.8.0
+Found existing installation: torchvision 0.23.0
+Uninstalling torchvision-0.23.0:
+  Successfully uninstalled torchvision-0.23.0
+WARNING: Skipping torchaudio as it is not installed.
+
+
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain> pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+Looking in indexes: https://download.pytorch.org/whl/cu118
+Collecting torch
+  Obtaining dependency information for torch from https://download-r2.pytorch.org/whl/cu118/torch-2.7.1%2Bcu118-cp312-cp312-win_amd64.whl.metadata
+  Downloading https://download-r2.pytorch.org/whl/cu118/torch-2.7.1%2Bcu118-cp312-cp312-win_amd64.whl.metadata (27 kB)
+Collecting torchvision
+  Obtaining dependency information for torchvision from https://download-r2.pytorch.org/whl/cu118/torchvision-0.22.1%2Bcu118-cp312-cp312-win_amd64.whl.metadata
+  Downloading https://download-r2.pytorch.org/whl/cu118/torchvision-0.22.1%2Bcu118-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
+Collecting torchaudio
+  Obtaining dependency information for torchaudio from https://download-r2.pytorch.org/whl/cu118/torchaudio-2.7.1%2Bcu118-cp312-cp312-win_amd64.whl.metadata
+  Downloading https://download-r2.pytorch.org/whl/cu118/torchaudio-2.7.1%2Bcu118-cp312-cp312-win_amd64.whl.metadata (6.8 kB)
+Requirement already satisfied: filelock in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torch) (3.29.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torch) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torch) (1.14.0)
+Requirement already satisfied: networkx in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torch) (3.6.1)
+Requirement already satisfied: jinja2 in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torch) (2026.4.0)
+Requirement already satisfied: setuptools in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torch) (81.0.0)
+Requirement already satisfied: numpy in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torchvision) (2.4.6)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from torchvision) (12.2.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from sympy>=1.13.3->torch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in d:\workspace\python\pythonproject\shopkeeper_brain\knowledge\.venv\lib\site-packages (from jinja2->torch) (3.0.3)
+Downloading https://download-r2.pytorch.org/whl/cu118/torch-2.7.1%2Bcu118-cp312-cp312-win_amd64.whl (2817.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 GB 1.0 MB/s eta 0:00:00
+Downloading https://download-r2.pytorch.org/whl/cu118/torchvision-0.22.1%2Bcu118-cp312-cp312-win_amd64.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 6.4 MB/s eta 0:00:00
+Downloading https://download-r2.pytorch.org/whl/cu118/torchaudio-2.7.1%2Bcu118-cp312-cp312-win_amd64.whl (4.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 4.3 MB/s eta 0:00:00
+Installing collected packages: torch, torchvision, torchaudio
+Successfully installed torch-2.7.1+cu118 torchaudio-2.7.1+cu118 torchvision-0.22.1+cu118
+WARNING: There was an error checking the latest version of pip.
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain>
+
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain>pip show torch torchvision
+Name: torch
+Version: 2.7.1+cu118
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org/
+Author: PyTorch Team
+Author-email: packages@pytorch.org
+License: BSD-3-Clause
+Location: D:\workspace\python\PythonProject\shopkeeper_brain\knowledge\.venv\Lib\site-packages
+Requires: filelock, fsspec, jinja2, networkx, setuptools, sympy, typing-extensions
+Required-by: accelerate, lmdeploy, peft, sentence-transformers, torchaudio, torchvision, xgrammar
+---
+Name: torchvision
+Version: 0.22.1+cu118
+Summary: image and video datasets and models for torch deep learning
+Home-page: https://github.com/pytorch/vision
+Author: PyTorch Core Team
+Author-email: soumith@pytorch.org
+License: BSD
+Location: D:\workspace\python\PythonProject\shopkeeper_brain\knowledge\.venv\Lib\site-packages
+Requires: numpy, pillow, torch
+Required-by: lmdeploy
+(.venv) (base) PS D:\workspace\python\PythonProject\shopkeeper_brain>

@@ -1,0 +1,291 @@
+====day05=========================================================
+今日任务
+
+    1.节点业务ducment_split文档切分
+
+    2.为什么要文档切分
+
+    3.表格处理方案
+
+====day05=========================================================
+
+
+01—掌柜智库_回顾
+
+
+02—掌柜智库_文档切片节点_搭建主流程_获取数据并校验_编码实现
+
+03—掌柜智库_文档切片节点_根据一级标题切割_编码实现
+
+    def _split_by_headings(self, md_content: str, file_title: str) -> List[dict]:
+        """
+        根据标题切分，生成段落列表
+        :param md_content: 整个markdown内容
+        :param file_title: 文件标题
+        :return:
+            [
+                {
+                    "title": "## 安全手册",
+                    "parent_title": "# 手册",
+                    "file_title": "万用表RS-12的使用手册",
+                    "body": "为了您的安全，请在使用本仪表之前仔细阅读该手册。。。。",
+                },
+                {
+                    "title": "## 安全标识",
+                    "parent_title": "# 手册",
+                    "file_title": "万用表RS-12的使用手册",
+                    "body": "表明此操作须参照说明书进行。。。。",
+                }
+            ]
+        """
+
+04—掌柜智库_文档切片节点_切分与合并章节的框架搭建_编码实现
+    def _split_long_merge_short(self, sections: List[dict], max_content_length: int = 1000,
+                                min_content_length: int = 100) -> List[dict]:
+        """
+        长段落进行二次切分，短段落进行合并
+        :param sections: 按标题切分的段落列表
+        :param max_content_length:  每个section段落的最大长度
+        :param min_content_length:
+        :return: 重新切分合并后的结果列表
+        """
+        current_sections = []
+        # 1.长切分
+        for section in sections:
+            # 收集切分和没切分的段落
+            current_sections.extend(self._split_long_section(section, max_content_length))
+
+        # 2.短合并
+        final_sections = self._merge_short_section(current_sections, min_content_length)
+
+        # 3.返回
+        return final_sections
+
+05—掌柜智库_文档切片节点_切分与合并章节的框架搭建_长二次切分_编码实现
+
+    def _split_long_section(self, section: dict, max_content_length: int) -> List[dict]:
+        """
+        长段落进行二次切分
+            1.获取section对象属性
+            2.判断表格
+            3.对标题校验长度，超过50截断
+            4.拼接标题前缀
+            5.计算标题前缀长度 + 内容长度
+            6.判断是否需要切分
+            7.计算body可用长度，判断长度是否小于等于0
+            8.需要继续切分
+                判断切分数量结果，要么返回唯一原元素列表，要么返回多个新元素类别
+            9.返回
+
+        :param section:
+               {
+                    "title": "## 安全手册",
+                    "parent_title": "# 手册",
+                    "file_title": "万用表RS-12的使用手册",
+                    "body": "为了您的安全，请在使用本仪表之前仔细阅读该手册。。。。",
+                },
+        :param max_content_length: 每个section段落的最大长度
+        :return:
+            [
+                {
+                    "title": "## 安全手册-1",
+                    "parent_title": "# 手册",
+                    "file_title": "万用表RS-12的使用手册",
+                    "body": "为了您的安全",
+                },
+                {
+                    "title": "## 安全手册-2",
+                    "parent_title": "# 手册",
+                    "file_title": "万用表RS-12的使用手册",
+                    "body": "请在使用本仪表之前仔细阅读该手册。。。。",
+                }
+            ]
+        """
+
+
+
+    梯子
+    查看官网 https://docs.langchain.com/oss/python/integrations/splitters/index#text-splitter-integrations
+    pip install -U langchain_text_splitters
+
+    --------- RecursiveCharacterTextSplitter ---------------------------
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+    text = "苹果的颜色是红色的[SEP]香蕉的颜色是黄色的[SEP]橘子的颜色是橙色的"
+
+    splitter_false = RecursiveCharacterTextSplitter(
+        chunk_size=2,  # 单个切分内容最大长度
+        chunk_overlap=0,  # 切分内容重叠部分长度
+        keep_separator=False,  # 是否保留分隔符
+        # separators=["[SEP]","的",""]
+        separators=["[SEP]", "的"]
+    )
+    print(splitter_false.split_text(text))
+     ---------------------------------------------------------------------
+
+
+06—掌柜智库_文档切片节点_表格处理的常见方式
+
+    调试，将max_content_length修改为1000，表格大概1300，大于了max_content_length值，表格被切分了。这是个问题！
+
+    学习文档：MarkDown表格处理方案.md
+
+    mineru生成的md中表格都是html表格。可以跨行跨列
+    md中用 |a|b|c| 生成的表格不能跨行跨列
+
+    ----------将html表格转换为图片-----------------
+        from html2image import Html2Image
+
+        hti = Html2Image()
+
+        html_content = """
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse; font-family:Arial;">
+        <tr><td></td><td>输入量程</td></tr>
+        <tr><td>功能</td><td>最大输入</td></tr>
+        <tr><td>交/直流电压</td><td>直流/交流电压600V</td></tr>
+        <tr><td>直流/交流电压</td><td>直流/交流电压600V, 200Vrms 用于200mV量程</td></tr>
+        <tr><td>mA直流</td><td>200mA 250V快速熔断保险丝</td></tr>
+        <tr><td>A DC</td><td>10A 250V 快速熔断保险丝(最多每15分钟,需时30秒)</td></tr>
+        <tr><td>电阻,短路测试</td><td>250Vrms, 最多15秒</td></tr>
+        </table>
+        """
+
+        #  pip install html2image  # 安装 html2image
+        hti.screenshot(html_str=html_content, save_as="table.png", size=(800, 400))
+    --------------------------------------------
+
+07—掌柜智库_文档切片节点_单独测试文档切分节点_编码实现
+
+    拷贝工具类： markdown_util.py复制到utils包
+
+    # 2. 表格降维处理
+    if "<table>" in body:
+        body = MarkdownTableLinearizer.process(body)
+        section['body'] = body
+
+
+
+08—掌柜智库_文档切片节点_切分与合并章节的框架搭建_短合并_编码实现
+
+    一定要去看 【切分与合并参数简单评估方式.md】：面试会考
+
+        max_content_length: int = 2000  # 切片最大长度
+
+        min_content_length: int = 500  # 合并短内容的最小长度
+
+    def _merge_short_section(self, current_sections: List[dict], min_content_length: int) -> List[dict]:
+        """
+        采用贪心累加算法合并过短的章节
+            局限性：
+                1.撑破最小阈值，大一点没关系
+                2.孤儿小块，不用理会
+            流程步骤：
+                1.定义变量
+                2.遍历及合并
+                2.1同源检查
+                2.2累加检查
+                2.3合并
+                3.返回
+        :param current_sections: 待合并段落列表
+        :param min_content_length: 最小段落长度
+        :return: 合并后的段落列表
+        """
+
+09—掌柜智库_文档切片节点_组装最终的chunks_编码实现
+    # =======================================================================================
+    #                #4.组装切片
+    # =======================================================================================
+    def _assemble_chunk(self, final_chunks: List[dict]) -> List[dict]:
+        self.log_step("step4", "组装切片")
+
+        chunks = []
+
+        # 4.1 title + body
+        for chunk in final_chunks:
+            assemble_chunk = {
+                "title": chunk.get("title"),
+                "parent_title": chunk.get("parent_title"),
+                "file_title": chunk.get("file_title"),
+                "content": chunk.get("title") + "\n\n" + chunk.get("body")
+            }
+            chunks.append(assemble_chunk)
+
+        # 4.2 构建最终 chunk  切片
+        return chunks
+
+10—掌柜智库_文档切片节点_记录日志及备份_编码实现
+
+    # ------------------------------------------------------------------ #
+    #                       #5.日志 & 备份
+    # ------------------------------------------------------------------ #
+
+    def _log_summary(self, raw_content: str, chunks: List[dict], max_length: int):
+        """输出切分统计信息"""
+        self.log_step("step5", "输出统计")
+
+        lines_count = raw_content.count("\n") + 1
+        self.logger.info(f"原文档行数: {lines_count}")
+        self.logger.info(f"最终切分章节数: {len(chunks)}")
+        self.logger.info(f"最大切片长度: {max_length}")
+
+        if chunks:
+            self.logger.info("章节预览:")
+            for i, sec in enumerate(chunks[:5]):
+                title = sec.get("title", "")[:30]
+                self.logger.info(f"  {i + 1}. {title}...")
+            if len(chunks) > 5:
+                self.logger.info(f"  ... 还有 {len(chunks) - 5} 个章节")
+
+    def _backup_chunks(self, state: ImportGraphState, sections: List[dict]):
+        """将切分结果备份到 JSON 文件"""
+        self.log_step("step6", "备份切片")
+
+        local_dir = state.get("file_dir", "")
+        if not local_dir:
+            self.logger.debug("未设置 file_dir，跳过备份")
+            return
+
+        try:
+            os.makedirs(local_dir, exist_ok=True)
+            output_path = os.path.join(local_dir, "chunks.json")
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(sections, f, ensure_ascii=False, indent=2)
+            self.logger.info(f"已备份到: {output_path}")
+        except Exception as e:
+            self.logger.warning(f"备份失败: {e}")
+
+
+
+
+11—掌柜智库_文档切片节点_测试main_graph_流程
+
+    if __name__ == '__main__':
+        setup_logging()
+
+        node = DocumentSplitNode()
+        file_path = r"D:\workspace\python\PythonProject\shopkeeper_brain\knowledge\processor\import_process\temp_dir\万用表RS-12的使用\auto\万用表RS-12的使用_new.md"
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        state = {
+            "file_title": "万用表的使用",
+            "md_content": content,
+            "file_dir": r"D:\workspace\python\PythonProject\shopkeeper_brain\knowledge\processor\import_process\temp_dir\万用表RS-12的使用\auto"
+        }
+
+        node.process(state)
+
+
+
+====================================================
+面试题：
+
+    1.为什么需要文档切分？
+
+    2.切分时表格如何处理？
+
+    3.切分文档的父标题处理思路？
+
+    4.切分文档的较短文档碎片是如何处理的？
+
+
+

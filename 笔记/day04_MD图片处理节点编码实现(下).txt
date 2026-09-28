@@ -1,0 +1,73 @@
+====day04=========================================================
+
+今日任务：
+
+    1.继续完成md_image_node节点开发
+
+====day04=========================================================
+01-掌柜智库_MD图片处理节点_VLM模型的使用
+    Qwen3-vl-flash 案例：
+
+    https://bailian.console.aliyun.com/cn-beijing?spm=5176.29597918.nav-v2-dropdown-menu-0.d_main_2_0.412f133cec1Vpn&tab=model&scm=20140722.M_10944401._.V_1#/model-market/detail/qwen3-vl-flash?serviceSite=asia-pacific-china
+
+        """
+            {
+                '01ff135dc95789f7cb428c34df92a77869db4f4e70b83d663d1c485a17e416c1.jpg': '万用表RS-12直流电流测量接线示意图（10A档位）',
+                '10d2f007e02047a07d46e75a81db7f96811916c0f5ff662fa23ce215dadcbbe1.jpg': '蜂鸣器功能符号指示',
+                '115adcddd73aeacbccd21861a542e8c23f78937f8680317548ea8393bcb0801b.jpg': '中文说明书标识',
+                '347706d8e5045d76f78334438c01c4b148a953dfe5c5f2f33b1fd269c1be2b1e.jpg': '最大量程接线端子标识',
+                '3e257858115a629b9112ea2e2c75344a2c2d01f2e6e110ab28d41809719fc433.jpg': '交流电压测量时表笔正确连接至被测电路的示意图',
+                '632c904bcd8e56179b983586935012e73ba69ee4aa5182e0afd784c11dd24816.jpg': '直流电流测量接线示意图（注意10A档位测量时间不超过30秒）',
+                '7c6088f1ec1b6fa8cb22a3cb79e54c078a31eedca587efda91bb8e8c14021df5.jpg': '万用表RS-12各部件标识示意图',
+                '9cfeb4ba44a7b657a15c5adae9ef70dbe187ae36f6a29b51ff71406e133b2f74.jpg': '安全警示标志',
+                '9e644c97f29cff6b9e2c1e64c7c4ccfddbf01e67dbf9ba2441f312db1b509f83.jpg': '高压危险警示符号',
+                'b3c6d4adad3a88b2cffb81c839603e1da5d0c88856602c66e02c91ec28ff2a89.jpg': '安全标识符号示意图',
+                'c71754d5d170bdaf9ef786ead1e68e3236f35d0de513bbcebe36b701a6a9543f.jpg': 'RS-12数字万用表正面面板结构示意图',
+                'c9b6e9c07a46004ce4b65c5bfcb1e9007526352174e4354f0a60ba812f2e62d2.jpg': 'RS PRO品牌标识',
+                'de9dde2732fe81a213e8fd32e98b790548145c7c796ec443d5f6f0cb576cd3e1.jpg': '万用表电阻测量接线示意图'
+            }
+        """
+
+02-掌柜智库_MD图片处理节点_VLM模型的使用_时间滑动窗口(限流) ☆☆☆☆☆
+
+    - 限流思想  解决高并发必要手段
+    - 时间滑动窗口 原理
+    - 双端队列 from collections import deque   数据存储及顺序处理的必须工具
+    - 锁：threading.Lock()  保证线程安全重要手段
+
+
+04-掌柜智库_MD图片处理节点_ImageUploader
+
+    -----# 正则表达式测试捕获组 start--------------------
+        import re
+        from pathlib import Path
+
+        md_content = "这是一张图片 ![](./images/01ff135dc95789f7cb428c34df92a77869db4f4e70b83d663d1c485a17e416c1.jpg) 和另一张 ![](./images/10d2f007e02047a07d46e75a81db7f96811916c0f5ff662fa23ce215dadcbbe1.jpg)"
+
+        pattern = re.compile(r"!\[(.*?)\]\((.*?)\)")
+
+        summaries = {
+            '01ff135dc95789f7cb428c34df92a77869db4f4e70b83d663d1c485a17e416c1.jpg': '万用表RS-12直流电流测量接线示意图（10A档位）',
+            '10d2f007e02047a07d46e75a81db7f96811916c0f5ff662fa23ce215dadcbbe1.jpg': '蜂鸣器功能符号指示'
+        }
+        remote_urls = {
+            '01ff135dc95789f7cb428c34df92a77869db4f4e70b83d663d1c485a17e416c1.jpg': 'http://192.168.6.160:9000/bucket/01ff135dc95789f7cb428c34df92a77869db4f4e70b83d663d1c485a17e416c1.jpg',
+            '10d2f007e02047a07d46e75a81db7f96811916c0f5ff662fa23ce215dadcbbe1.jpg': 'http://192.168.6.160:9000/bucket/10d2f007e02047a07d46e75a81db7f96811916c0f5ff662fa23ce215dadcbbe1.jpg'
+        }
+
+
+        def replacer(match: re.Match) -> str:
+            original_path = match.group(2).strip()
+            file_name_in_md = Path(original_path).name
+            for img_name, summary in summaries.items():
+                if img_name == file_name_in_md:
+                    return f"![{summary}]({remote_urls[img_name]})"
+            return match.group(0)
+
+        # group(0) — 表示整个匹配结果（即完整匹配到的字符串），不是任何一个捕获组。
+        # group(1) — 第 1 个捕获组 (.*?)，即 [] 中的内容（图片的 alt 文本）。
+        # group(2) — 第 2 个捕获组 (.*?)，即 () 中的内容（图片的 URL/路径）。
+        result = pattern.sub(replacer, md_content)
+        print(result)
+
+    -----# 正则表达式测试捕获组 end--------------------
